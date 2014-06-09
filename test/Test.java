@@ -22,8 +22,7 @@ public class Test extends TestCase {
     public void Tst(){
         Game g = new Game();
         assertEquals(0, g.RollDice(0)); 
-        sdfs
-                sdfs
+        
     }
     
    
