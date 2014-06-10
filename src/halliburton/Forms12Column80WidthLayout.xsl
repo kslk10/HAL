@@ -83,6 +83,36 @@
         </xsl:element>
     </xsl:template>
   
+
+  <xsl:template match="//*[local-name() = 'W6Label'][@Text = '']">
+        <xsl:element name="PropertyPanelsNS:W6Label">
+            <xsl:apply-templates select="@*|node()"/>
+            <xsl:attribute name="Text">
+                <xsl:call-template name="hyphens">
+                    <xsl:with-param name="howMany" select="150" />
+                </xsl:call-template>
+            </xsl:attribute>
+            <xsl:attribute name="Width">1200</xsl:attribute>
+            <xsl:attribute name="Height">5</xsl:attribute>
+            <xsl:attribute name="FontSize">5</xsl:attribute>
+            <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
+            <xsl:attribute name="Grid.Column">1</xsl:attribute>
+        </xsl:element>
+  </xsl:template>
+
+  
+   <xsl:template name="hyphens">
+    <xsl:param name="howMany">1</xsl:param>
+    <xsl:if test="$howMany &gt; 0">
+
+      <xsl:text>-</xsl:text>
+
+      <xsl:call-template name="hyphens">
+        <xsl:with-param name="howMany" select="$howMany - 1" />
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  
   <xsl:template match="//*[local-name() = 'W6Label'][@GridXYZColumn = '0']">
         <xsl:element name="PropertyPanelsNS:W6Label">
             <xsl:apply-templates select="@*|node()"/>
@@ -244,7 +274,7 @@
             <xsl:apply-templates select="@*|node()"/>
             <xsl:attribute name="Width">1180</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
-            <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
+            <xsl:attribute name="Grid.Column">1</xsl:attribute>
         </xsl:element>
     </xsl:template>
     
@@ -254,7 +284,7 @@
             <xsl:attribute name="Width">900</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
             <xsl:attribute name="LabelWidth">160</xsl:attribute>
-            <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
+            <xsl:attribute name="Grid.Column">1</xsl:attribute>
         </xsl:element>
     </xsl:template>
 </xsl:stylesheet>
