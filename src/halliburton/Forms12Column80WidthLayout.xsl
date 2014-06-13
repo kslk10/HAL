@@ -64,10 +64,19 @@
     </xsl:template>
   
     <xsl:template match="//*[local-name() = 'W6PropPanelString'][@GridXYZColumn = '0']">
+        <xsl:variable name="width" select="./@Width"/>
         <xsl:element name="PropertyPanelsNS:W6PropPanelString">
             <xsl:apply-templates select="@*|node()"/>
-            <xsl:attribute name="Width">400</xsl:attribute>
-            <xsl:attribute name="Grid.ColumnSpan">5</xsl:attribute>
+            <xsl:choose>
+                <xsl:when test="$width = '830'">
+                    <xsl:attribute name="Width">880</xsl:attribute>
+                    <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="Width">400</xsl:attribute>
+                    <xsl:attribute name="Grid.ColumnSpan">5</xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
             <xsl:attribute name="LabelWidth">160</xsl:attribute>
         </xsl:element>
@@ -82,36 +91,6 @@
             <xsl:attribute name="LabelWidth">160</xsl:attribute>
         </xsl:element>
     </xsl:template>
-  
-
-  <xsl:template match="//*[local-name() = 'W6Label'][@Text = '']">
-        <xsl:element name="PropertyPanelsNS:W6Label">
-            <xsl:apply-templates select="@*|node()"/>
-            <xsl:attribute name="Text">
-                <xsl:call-template name="hyphens">
-                    <xsl:with-param name="howMany" select="150" />
-                </xsl:call-template>
-            </xsl:attribute>
-            <xsl:attribute name="Width">1200</xsl:attribute>
-            <xsl:attribute name="Height">5</xsl:attribute>
-            <xsl:attribute name="FontSize">5</xsl:attribute>
-            <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
-            <xsl:attribute name="Grid.Column">1</xsl:attribute>
-        </xsl:element>
-  </xsl:template>
-
-  
-   <xsl:template name="hyphens">
-    <xsl:param name="howMany">1</xsl:param>
-    <xsl:if test="$howMany &gt; 0">
-
-      <xsl:text>-</xsl:text>
-
-      <xsl:call-template name="hyphens">
-        <xsl:with-param name="howMany" select="$howMany - 1" />
-      </xsl:call-template>
-    </xsl:if>
-  </xsl:template>
   
   <xsl:template match="//*[local-name() = 'W6Label'][@GridXYZColumn = '0']">
         <xsl:element name="PropertyPanelsNS:W6Label">
@@ -231,10 +210,10 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="//*[local-name() = 'W6PropPanelMultiValueKey'][@Width = '820']">
+    <xsl:template match="//*[local-name() = 'W6PropPanelMultiValueKey'][@Width = '820' or '810']">
         <xsl:element name="PropertyPanelsNS:W6PropPanelMultiValueKey">
             <xsl:apply-templates select="@*|node()"/>
-            <xsl:attribute name="Width">1180</xsl:attribute>
+            <xsl:attribute name="Width">860</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
             <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
         </xsl:element>
@@ -243,7 +222,7 @@
     <xsl:template match="//*[local-name() = 'W6PropPanelMultiValue'][@Width = '820']">
         <xsl:element name="PropertyPanelsNS:W6PropPanelMultiValue">
             <xsl:apply-templates select="@*|node()"/>
-            <xsl:attribute name="Width">1180</xsl:attribute>
+            <xsl:attribute name="Width">860</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
             <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
         </xsl:element>
@@ -272,9 +251,9 @@
     <xsl:template match="//*[local-name() = 'W6CustomPanel'][@Width= '820' or '810']">
         <xsl:element name="PropertyPanelsNS:W6CustomPanel">
             <xsl:apply-templates select="@*|node()"/>
-            <xsl:attribute name="Width">1180</xsl:attribute>
+            <xsl:attribute name="Width">860</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
-            <xsl:attribute name="Grid.Column">1</xsl:attribute>
+            <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
         </xsl:element>
     </xsl:template>
     
@@ -284,7 +263,36 @@
             <xsl:attribute name="Width">900</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
             <xsl:attribute name="LabelWidth">160</xsl:attribute>
-            <xsl:attribute name="Grid.Column">1</xsl:attribute>
+            <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="//*[local-name() = 'W6Label'][@Text = '']">
+        <xsl:element name="PropertyPanelsNS:W6Label">
+            <xsl:apply-templates select="@*|node()"/>
+            <xsl:attribute name="Text">
+                <xsl:call-template name="hyphens">
+                    <xsl:with-param name="howMany" select="400" />
+                </xsl:call-template>
+            </xsl:attribute>
+            <xsl:attribute name="Width">1200</xsl:attribute>
+            <xsl:attribute name="Height">5</xsl:attribute>
+            <xsl:attribute name="FontSize">5</xsl:attribute>
+            <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
+            <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
+        </xsl:element>
+  </xsl:template>
+
+  
+   <xsl:template name="hyphens">
+    <xsl:param name="howMany">1</xsl:param>
+    <xsl:if test="$howMany &gt; 0">
+
+      <xsl:text>-</xsl:text>
+
+      <xsl:call-template name="hyphens">
+        <xsl:with-param name="howMany" select="$howMany - 1" />
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
 </xsl:stylesheet>
