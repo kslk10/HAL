@@ -1,0 +1,86 @@
+<FormEngineNS:W6InternalForm ObjectType="40000004" Height="600" Header="Resource Utilization" MinWidth="270" DLL="" ClassID="" Width="1100" xmlns:FormEngineNS="clr-namespace:W6.Web.FormEngine;assembly=W6.Web.FormEngine" xmlns:PropertyPanelsNS="clr-namespace:W6.Web.FormEngine.PropertyPanels;assembly=W6.Web.FormEngine" xmlns:TabControlNS="clr-namespace:W6.Web.FormEngine.TabControl;assembly=W6.Web.FormEngine" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,0.1" StartPoint="0,0">
+                <GradientStop Color="#FF9CB3D1" Offset="0" />
+                <GradientStop Color="#FFD8E8FF" Offset="1" />
+                <GradientStop Color="#FFE5E8FF" Offset="0.4" />
+                <GradientStop Color="#FFFFFFFF" Offset="0.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Visibility="Collapsed" Text="" Name="m_title" Margin="0,5,0,0" Foreground="#FF5174B5" FontFamily="Lucida Sans Unicode" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Grid Grid.Row="1" Height="Auto" Width="Auto" Background="#FFD8E8FF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="240" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <TabControlNS:W6TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Alignment="Top" Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Margin="20,5,20,5" BorderThickness="0,0,0,0">
+                <TabControlNS:W6TabPage Text="Utilization" Visible="&lt;Expression T=&quot;230&quot; /&gt;">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <PropertyPanelsNS:W6PropPanelString PropertyName="DisplayExternalRefID" PropertyText="Resource #" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="5" Width="400" Grid.ColumnSpan="5" Grid.Column="1" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelString PropertyName="ResourceName" PropertyText="Name" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;260&quot;&gt;&lt;Prop T=&quot;103&quot;&gt;&lt;OT&gt;8&lt;/OT&gt;&lt;N&gt;ResourceType&lt;/N&gt;&lt;/Prop&gt;&lt;List&gt;&lt;Prop T=&quot;104&quot;&gt;Individual&lt;/Prop&gt;&lt;/List&gt;&lt;/Expression&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="5" Width="400" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelString PropertyName="ResourceName" PropertyText="Description" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;260&quot;&gt;&lt;Prop T=&quot;103&quot;&gt;&lt;OT&gt;8&lt;/OT&gt;&lt;N&gt;ResourceType&lt;/N&gt;&lt;/Prop&gt;&lt;List&gt;&lt;Prop T=&quot;104&quot;&gt;Equipment&lt;/Prop&gt;&lt;/List&gt;&lt;/Expression&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="5" Width="400" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelDateTime ShowDate="true" ShowTime="true" PropertyName="ActualStartTime" PropertyText="Start Time" ReadOnly="&lt;Expression T=&quot;210&quot;&gt;&lt;Left T=&quot;103&quot;&gt;&lt;OT&gt;40000004&lt;/OT&gt;&lt;N&gt;Posted&lt;/N&gt;&lt;/Left&gt;&lt;Right T=&quot;104&quot;&gt;True&lt;/Right&gt;&lt;OP T=&quot;501&quot; /&gt;&lt;/Expression&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="6" Width="380" Grid.ColumnSpan="5" LabelWidth="160" Grid.Column="1" />
+                            <PropertyPanelsNS:W6PropPanelDateTime ShowDate="true" ShowTime="true" PropertyName="FinishTime" PropertyText="End Time" ReadOnly="&lt;Expression T=&quot;210&quot;&gt;&lt;Left T=&quot;103&quot;&gt;&lt;OT&gt;40000004&lt;/OT&gt;&lt;N&gt;Posted&lt;/N&gt;&lt;/Left&gt;&lt;Right T=&quot;104&quot;&gt;True&lt;/Right&gt;&lt;OP T=&quot;501&quot; /&gt;&lt;/Expression&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="6" Width="380" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelDuration ShowDays="true" ShowHours="true" ShowMinutes="true" DaysString="DD" HoursString="HH" MinutesString="MM" PropertyName="Duration" PropertyText="Hours" ReadOnly="&lt;Expression T=&quot;210&quot;&gt;&lt;Left T=&quot;103&quot;&gt;&lt;OT&gt;40000004&lt;/OT&gt;&lt;N&gt;Posted&lt;/N&gt;&lt;/Left&gt;&lt;Right T=&quot;104&quot;&gt;True&lt;/Right&gt;&lt;OP T=&quot;501&quot; /&gt;&lt;/Expression&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="2" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="7" Width="380" Grid.ColumnSpan="5" Grid.Column="1" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelCombo RelatedObjectName="HALResourceType" IdentifierPropertyName="Name" SortPropertyName="Name" CustomDataClassXML="" ParentDictionary="None" ParentDictionaryID="" PropertyName="ResourceType" PropertyText="Resource Type" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;240&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="0" FontSize="11" Grid.Row="10" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="1" Width="380" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                            <PropertyPanelsNS:W6Label Text="Post Requested:" Margin="5" Height="25" FontSize="11" Grid.Row="3" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="20" Width="160" Grid.ColumnSpan="2" Grid.Column="1" />
+                            <PropertyPanelsNS:W6PropPanelBoolean TrueString="true" FalseString="false" PropertyName="Posted" PropertyText="" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="False" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="15 0 0 0" Height="25" FontSize="11" Grid.Row="3" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="2" Width="80" Grid.ColumnSpan="2" Grid.Column="3" LabelWidth="0" />
+                            <PropertyPanelsNS:W6PropPanelDateTime ShowDate="true" ShowTime="true" PropertyName="PostedDate" PropertyText="Post Requested Date" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="3" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="6" Width="380" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                            <PropertyPanelsNS:W6Label Text="Validation Error:" Margin="5" Height="25" FontSize="11" Grid.Row="4" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="20" Width="160" Grid.ColumnSpan="2" Grid.Column="1" />
+                            <PropertyPanelsNS:W6PropPanelBoolean TrueString="true" FalseString="false" PropertyName="ValidationError" PropertyText="" ReadOnly="&lt;Expression T=&quot;210&quot;&gt;&lt;Left T=&quot;103&quot;&gt;&lt;OT&gt;40000004&lt;/OT&gt;&lt;N&gt;Posted&lt;/N&gt;&lt;/Left&gt;&lt;Right T=&quot;104&quot;&gt;True&lt;/Right&gt;&lt;OP T=&quot;501&quot; /&gt;&lt;/Expression&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="15 0 0 0" Height="25" FontSize="11" Grid.Row="4" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="2" Width="80" Grid.ColumnSpan="2" Grid.Column="3" LabelWidth="0" />
+                            <PropertyPanelsNS:W6PropPanelCombo RelatedObjectName="HALCostingValidationErrCode" IdentifierPropertyName="Name" SortPropertyName="Name" CustomDataClassXML="" ParentDictionary="None" ParentDictionaryID="" PropertyName="ValidationErrorCode" PropertyText="Error Code" ReadOnly="&lt;Expression T=&quot;210&quot;&gt;&lt;Left T=&quot;103&quot;&gt;&lt;OT&gt;40000004&lt;/OT&gt;&lt;N&gt;Posted&lt;/N&gt;&lt;/Left&gt;&lt;Right T=&quot;104&quot;&gt;True&lt;/Right&gt;&lt;OP T=&quot;501&quot; /&gt;&lt;/Expression&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="5" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="1" Width="380" Grid.ColumnSpan="5" Grid.Column="1" LabelWidth="160" />
+                            <PropertyPanelsNS:W6Label Text="Post Successful:" Margin="5" Height="25" FontSize="11" Grid.Row="7" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="20" Width="160" Grid.ColumnSpan="2" Grid.Column="1" />
+                            <PropertyPanelsNS:W6PropPanelBoolean TrueString="true" FalseString="false" PropertyName="SAPPostConfirmed" PropertyText="" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="15 0 0 0" Height="25" FontSize="11" Grid.Row="7" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="2" Width="80" Grid.ColumnSpan="2" Grid.Column="3" LabelWidth="0" />
+                            <PropertyPanelsNS:W6PropPanelDateTime ShowDate="true" ShowTime="true" PropertyName="SAPPostConfirmedDate" PropertyText="Post Successful Date" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="7" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="6" Width="380" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelCombo RelatedObjectName="HALCostingValidationErrCode" IdentifierPropertyName="Description" SortPropertyName="Name" CustomDataClassXML="" ParentDictionary="None" ParentDictionaryID="" PropertyName="ValidationErrorCode" PropertyText="Validation Error Description" ReadOnly="&lt;Expression T=&quot;230&quot; /&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="6" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="1" Width="380" Grid.ColumnSpan="5" Grid.Column="1" LabelWidth="160" />
+                            <PropertyPanelsNS:W6PropPanelDouble Minimum="0" Maximum="999999999" Step="0.1" PropertyName="Revenue" PropertyText="Revenue" ReadOnly="&lt;Expression T=&quot;210&quot;&gt;&lt;Left T=&quot;103&quot;&gt;&lt;OT&gt;40000004&lt;/OT&gt;&lt;N&gt;Posted&lt;/N&gt;&lt;/Left&gt;&lt;Right T=&quot;104&quot;&gt;True&lt;/Right&gt;&lt;OP T=&quot;501&quot; /&gt;&lt;/Expression&gt;" Mandatory="&lt;Expression T=&quot;240&quot; /&gt;" DefaultValue="0" Visible="&lt;Expression T=&quot;230&quot; /&gt;" Enabled="&lt;Expression T=&quot;230&quot; /&gt;" Margin="5" Height="25" FontSize="11" Grid.Row="2" Grid.RowSpan="1" HorizontalAlignment="Left" VerticalAlignment="Center" PropertyType="4" Width="380" Grid.ColumnSpan="5" Grid.Column="7" LabelWidth="160" />
+                        </Grid>
+                    </ScrollViewer>
+                </TabControlNS:W6TabPage>
+            </TabControlNS:W6TabControl>
+            <Button Content="OK" Name="m_btnOK" Margin="0,0,93,15" MinWidth="68" Width="Auto" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" />
+            <Button Content="Apply" Name="m_btnApply" Margin="0,0,93,15" MinWidth="68" Width="Auto" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Visibility="Collapsed" />
+            <Button Content="Cancel" Name="m_btnCancel" Margin="0,0,20,15" MinWidth="68" Width="Auto" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" />
+            <TextBlock Visibility="Collapsed" Text="Refresh Message" Name="m_Refresh" Margin="-270,0,0,15" Foreground="#FFFF0000" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" />
+        </Grid>
+    </Grid>
+</FormEngineNS:W6InternalForm>

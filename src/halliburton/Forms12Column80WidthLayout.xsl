@@ -23,44 +23,55 @@
     </xsl:template>
 
     <xsl:template match="//*[local-name() = 'Grid.ColumnDefinitions']">
-        <xsl:element name="Grid.ColumnDefinitions" namespace="">
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-            <xsl:element name="ColumnDefinition">
-                <xsl:attribute name="Width">80</xsl:attribute>
-            </xsl:element>
-        </xsl:element>
+        <xsl:variable name="Background" select="./parent::*/@Background"/>
+        <xsl:choose>
+            <xsl:when test="$Background">
+                <xsl:copy>
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:copy>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="Grid.ColumnDefinitions" namespace="">
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="ColumnDefinition">
+                        <xsl:attribute name="Width">80</xsl:attribute>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
   
     <xsl:template match="//*[local-name() = 'W6PropPanelString'][@GridXYZColumn = '0']">
@@ -92,23 +103,23 @@
         </xsl:element>
     </xsl:template>
   
-  <xsl:template match="//*[local-name() = 'W6Label'][@GridXYZColumn = '0']">
+    <xsl:template match="//*[local-name() = 'W6Label'][@GridXYZColumn = '0']">
         <xsl:element name="PropertyPanelsNS:W6Label">
             <xsl:apply-templates select="@*|node()"/>
             <xsl:attribute name="Width">160</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">2</xsl:attribute>
             <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
         </xsl:element>
-  </xsl:template>
+    </xsl:template>
   
-  <xsl:template match="//*[local-name() = 'W6Label'][@GridXYZColumn = '3']">
+    <xsl:template match="//*[local-name() = 'W6Label'][@GridXYZColumn = '3']">
         <xsl:element name="PropertyPanelsNS:W6Label">
             <xsl:apply-templates select="@*|node()"/>
             <xsl:attribute name="Width">160</xsl:attribute>
             <xsl:attribute name="Grid.ColumnSpan">2</xsl:attribute>
             <xsl:attribute name="GridXYZColumn">7</xsl:attribute>
         </xsl:element>
-  </xsl:template>
+    </xsl:template>
   
     <xsl:template match="//*[local-name() = 'W6PropPanelBoolean'][@GridXYZColumn = '1']">
         <xsl:element name="PropertyPanelsNS:W6PropPanelBoolean">
@@ -130,7 +141,7 @@
         </xsl:element>
     </xsl:template>
 
-<xsl:template match="//*[local-name() = 'W6PropPanelLong'][@GridXYZColumn = '0']">
+    <xsl:template match="//*[local-name() = 'W6PropPanelLong'][@GridXYZColumn = '0']">
         <xsl:element name="PropertyPanelsNS:W6PropPanelLong">
             <xsl:apply-templates select="@*|node()"/>
             <xsl:attribute name="Width">380</xsl:attribute>
@@ -281,18 +292,18 @@
             <xsl:attribute name="Grid.ColumnSpan">12</xsl:attribute>
             <xsl:attribute name="GridXYZColumn">1</xsl:attribute>
         </xsl:element>
-  </xsl:template>
+    </xsl:template>
 
   
-   <xsl:template name="hyphens">
-    <xsl:param name="howMany">1</xsl:param>
-    <xsl:if test="$howMany &gt; 0">
+    <xsl:template name="hyphens">
+        <xsl:param name="howMany">1</xsl:param>
+        <xsl:if test="$howMany &gt; 0">
 
-      <xsl:text>-</xsl:text>
+            <xsl:text>-</xsl:text>
 
-      <xsl:call-template name="hyphens">
-        <xsl:with-param name="howMany" select="$howMany - 1" />
-      </xsl:call-template>
-    </xsl:if>
-  </xsl:template>
+            <xsl:call-template name="hyphens">
+                <xsl:with-param name="howMany" select="$howMany - 1" />
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template>
 </xsl:stylesheet>
